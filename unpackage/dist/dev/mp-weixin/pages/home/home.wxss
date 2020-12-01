@@ -441,4 +441,51 @@ view {
 .midd-item1-c3 text{
 	margin:0 12px;
 }
+.special-list{
+    width: 100%;
+    height: 307rpx;
+    overflow: hidden;
+    padding: 20rpx 0 0 38rpx;
+    background: #fff;
+    white-space: nowrap;
+}
+.special-scroll{
+      height: 330rpx;width: auto;overflow:hidden;
+}
+.special-item{
+      height:184rpx;
+      width: 184rpx;
+      display: inline-block;
+      margin-right:40rpx;
+      background-color: #aaa;
+}
+.image{
+	  height:184rpx;
+	  width: 184rpx;
+}
+.name{
+      font-size: 20rpx;
+      color: $normalGrayFont;
+      -webkit-line-clamp:1;
+      overflow: hidden;
+      display:-weblit-box;
+      word-break: break-all;
+      text-overflow: ellipsis;
+}
+.price{
+      font-size:28rpx;
+}
+.special-item-last{
+      height:184rpx;
+      width: 184rpx;
+      border:2rpx solid #ddd;
+      -webkit-border-radius:2rpx;
+              border-radius:2rpx;
+      display: inline-block;
+      margin-right:40rpx;
+      text-align: center;
+      vertical-align: top;
+      padding:44rpx 0;
+}
+  
 

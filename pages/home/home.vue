@@ -205,6 +205,56 @@
 						</view>
 					</view>
 				</view>
+				<view class="moreFour" style="width: 80%;background-color: #FFFFFF;height: 147px;margin: 10px auto;
+    border-radius: 12px;display: flex;flex-direction: column;justify-content: space-evenly;">
+					<view class="more1" style="width: 94%;height: 20%;border: #000000 1px solid;display: flex;margin: 0 auto;">
+						<text style="display: block;font-size: 20px;color: #DD524D;line-height: 29.4px;">神 价 格</text>
+						<text style="display: block;margin-left: 5px;color: #999999;line-height: 29.4px;">这么买更实惠</text>
+						<view class="" style="display: flex;margin-left: 32%;">
+							<text style="display: block;line-height: 29.4px;font-size: 12px;color: #999999;">更多</text>
+							<image src="../../static/images/more.png" mode="aspectFill" style="width: 22px;height: 22px;margin-top: 2.7px;"></image>
+						</view>
+					</view>
+					<view class="" style="width: 94%;height: 62%;border: #007AFF 1px solid;margin: 0 auto;">
+						
+					</view>
+				</view>
+				
+				<view class="special-list">
+				 <scroll-view scroll-x="true" class="special-scroll">
+				         <view class="special-item">
+				            <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
+				          <view class="name">啊啊啊啊啊</view>
+				          <view class="price">￥456{{index}}</view>
+				         </view>
+						 <view class="special-item">
+						    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
+						  <view class="name">啊啊啊啊啊</view>
+						  <view class="price">￥456{{index}}</view>
+						 </view>
+						 <view class="special-item">
+						    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
+						  <view class="name">啊啊啊啊啊</view>
+						  <view class="price">￥456{{index}}</view>
+						 </view>
+						 <view class="special-item">
+						    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
+						  <view class="name">啊啊啊啊啊</view>
+						  <view class="price">￥456{{index}}</view>
+						 </view>
+						 <view class="special-item">
+						    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
+						  <view class="name">啊啊啊啊啊</view>
+						  <view class="price">￥456{{index}}</view>
+						 </view>
+				         <view class="special-item-last">
+				            <view style="font-size: 36rpx">+10</view>
+				            <view style="font-size:24rpx;">查看全部单品</view>
+				         </view>
+			   </scroll-view>
+				</view>
+				
+				
 			</view>
 		</view>
 	</view>
@@ -608,4 +658,54 @@
 	.midd-item1-c3 text{
 		margin:0 12px;
 	}
+	
+	
+	
+	
+	 .special-list{
+	    width: 100%;
+	    height: 307rpx;
+	    overflow: hidden;
+	    padding: 20rpx 0 0 38rpx;
+	    background: #fff;
+	    white-space: nowrap;
+		}
+	    .special-scroll{
+	      height: 330rpx;width: auto;overflow:hidden;
+	    }
+	    .special-item{
+	      height:184rpx;
+	      width: 184rpx;
+	      display: inline-block;
+	      margin-right:40rpx;
+	      background-color: #aaa;
+	    }
+		.image{
+		  height:184rpx;
+		  width: 184rpx;
+		}
+	    .name{
+	      font-size: 20rpx;
+	      color: $normalGrayFont;
+	      -webkit-line-clamp:1;
+	      overflow: hidden;
+	      display:-weblit-box;
+	      word-break: break-all;
+	      text-overflow: ellipsis;
+	    }
+	    .price{
+	      font-size:28rpx;
+	    }
+	    .special-item-last{
+	      height:184rpx;
+	      width: 184rpx;
+	      border:2rpx solid #ddd;
+	      border-radius:2rpx;
+	      display: inline-block;
+	      margin-right:40rpx;
+	      text-align: center;
+	      vertical-align: top;
+	      padding:44rpx 0;
+	    }
+	  
 </style>
