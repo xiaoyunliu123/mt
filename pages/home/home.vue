@@ -205,56 +205,88 @@
 						</view>
 					</view>
 				</view>
-				<view class="moreFour" style="width: 80%;background-color: #FFFFFF;height: 147px;margin: 10px auto;
-    border-radius: 12px;display: flex;flex-direction: column;justify-content: space-evenly;">
-					<view class="more1" style="width: 94%;height: 20%;border: #000000 1px solid;display: flex;margin: 0 auto;">
-						<text style="display: block;font-size: 20px;color: #DD524D;line-height: 29.4px;">神 价 格</text>
-						<text style="display: block;margin-left: 5px;color: #999999;line-height: 29.4px;">这么买更实惠</text>
-						<view class="" style="display: flex;margin-left: 32%;">
-							<text style="display: block;line-height: 29.4px;font-size: 12px;color: #999999;">更多</text>
-							<image src="../../static/images/more.png" mode="aspectFill" style="width: 22px;height: 22px;margin-top: 2.7px;"></image>
+				<view class="moreFour">
+					<view class="more1">
+						<text class="more1-item1" space="nbsp">神 价 格</text>
+						<text class="more1-item2">这么买更实惠</text>
+						<view class="more1-item3">
+							<text>更多</text>
+							<image src="../../static/images/more.png" mode="aspectFill"></image>
 						</view>
 					</view>
-					<view class="" style="width: 94%;height: 62%;border: #007AFF 1px solid;margin: 0 auto;">
-						
+					<view class="more2">
+						<scroll-view scroll-x="true">
+							<view class="more2-item1">
+								<view class="more2-item1-a">
+									<image src="../../static/images/a2.png" mode="aspectFit"></image>
+									<text class="more2-item1-a1">招牌肌肉腿饭</text>
+									<view class="">
+										<text class="more2-item1-a2">￥</text>
+										<text class="more2-item1-a3">14.99</text>
+										<text class="more2-item1-a4">￥26</text>
+									</view>
+								</view>
+								<view class="more2-item1-a">
+									<image src="../../static/images/a2.png" mode="aspectFit"></image>
+									<text class="more2-item1-a1">招牌肌肉腿饭</text>
+									<view class="">
+										<text class="more2-item1-a2">￥</text>
+										<text class="more2-item1-a3">14.99</text>
+										<text class="more2-item1-a4">￥26</text>
+									</view>
+								</view>
+								<view class="more2-item1-a">
+									<image src="../../static/images/a2.png" mode="aspectFit"></image>
+									<text class="more2-item1-a1">招牌肌肉腿饭</text>
+									<view class="">
+										<text class="more2-item1-a2">￥</text>
+										<text class="more2-item1-a3">14.99</text>
+										<text class="more2-item1-a4">￥26</text>
+									</view>
+								</view>
+								<view class="more2-item1-a">
+									<image src="../../static/images/a2.png" mode="aspectFit"></image>
+									<text class="more2-item1-a1">招牌肌肉腿饭</text>
+									<view class="">
+										<text class="more2-item1-a2">￥</text>
+										<text class="more2-item1-a3">14.99</text>
+										<text class="more2-item1-a4">￥26</text>
+									</view>
+								</view>
+								<view class="more2-item1-a">
+									<image src="../../static/images/a2.png" mode="aspectFit"></image>
+									<text class="more2-item1-a1">招牌肌肉腿饭</text>
+									<view class="">
+										<text class="more2-item1-a2">￥</text>
+										<text class="more2-item1-a3">14.99</text>
+										<text class="more2-item1-a4">￥26</text>
+									</view>
+								</view>
+								<view class="more2-item1-a">
+									<image src="../../static/images/a2.png" mode="aspectFit"></image>
+									<text class="more2-item1-a1">招牌肌肉腿饭</text>
+									<view class="">
+										<text class="more2-item1-a2">￥</text>
+										<text class="more2-item1-a3">14.99</text>
+										<text class="more2-item1-a4">￥26</text>
+									</view>
+								</view>
+								
+								
+								<view class="" style="width: 29px;height: 80%;background-color: #C0C0C0;border-radius: 10px;">
+									<image src="../../static/images/xing.png" mode="aspectFill" style="width: 10px;height: 10px;margin-left: 10px;"></image>
+									<view class="" style="width: 25px;height: 80%;text-align: center;">
+										<text>更多惊喜</text>
+									</view>
+									
+								</view>
+							</view>
+						</scroll-view>
 					</view>
 				</view>
-				
-				<view class="special-list">
-				 <scroll-view scroll-x="true" class="special-scroll">
-				         <view class="special-item">
-				            <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
-				          <view class="name">啊啊啊啊啊</view>
-				          <view class="price">￥456{{index}}</view>
-				         </view>
-						 <view class="special-item">
-						    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
-						  <view class="name">啊啊啊啊啊</view>
-						  <view class="price">￥456{{index}}</view>
-						 </view>
-						 <view class="special-item">
-						    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
-						  <view class="name">啊啊啊啊啊</view>
-						  <view class="price">￥456{{index}}</view>
-						 </view>
-						 <view class="special-item">
-						    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
-						  <view class="name">啊啊啊啊啊</view>
-						  <view class="price">￥456{{index}}</view>
-						 </view>
-						 <view class="special-item">
-						    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" class="image" mode="aspectFit"></image>
-						  <view class="name">啊啊啊啊啊</view>
-						  <view class="price">￥456{{index}}</view>
-						 </view>
-				         <view class="special-item-last">
-				            <view style="font-size: 36rpx">+10</view>
-				            <view style="font-size:24rpx;">查看全部单品</view>
-				         </view>
-			   </scroll-view>
+				<view class="fjsj">
+					<text>附近商家</text>
 				</view>
-				
-				
 			</view>
 		</view>
 	</view>
@@ -433,8 +465,8 @@
 	.swip{
 		background-color: #FFFFFF;
 		border-radius: 12px;
-		width: 80%;
-		margin-left: 10%;
+		width: 90%;
+		margin-left: 5%;
 		margin-top: 6%;
 
 	}
@@ -459,7 +491,7 @@
 		display: flex;
 		justify-content: space-between;
 		background-color: #FFFFCC;
-		width: 80%;
+		width: 90%;
 		height: 50px;
 		margin: 0 auto;
 		border-radius: 12px;
@@ -482,7 +514,7 @@
 		height: 100%;
 	}
 	.g-item2{
-		width: 70%;
+		width: 76%;
 		height: 80%;
 	}
 	.g-item-c3{
@@ -534,15 +566,16 @@
 		border-radius: 20rpx;
 	}
 	.banner{
-		width: 80%;
+		width: 90%;
 		height: 166rpx;
 		margin: 0 auto;
 		margin-top: 20rpx;
 		border-radius: 20rpx;
 	}
 	.middles{
-		width: 80%;
-		height: 230px;
+		width: 90%;
+		/* height: 230px; */
+		height: auto;
 		margin: 0 auto;
 		margin-top: 20rpx;
 		background-color: #FFFFFF;
@@ -553,7 +586,8 @@
 	}
 	.midd-item1{
 		width: 94%;
-		height: 30%;
+		/* height: 30%; */
+		height: 161rpx;
 		margin: 0 auto;
 		display: flex;
 		padding: 10px 0;
@@ -566,35 +600,42 @@
 	}
 	.midd-item1-a3 text{
 		font-size: 12px;
-		margin: 3px 0 0 8px;
+		margin: 6rpx 0 0 16rpx;
+		width: 122rpx;
+	}
+	.midd-item1-c1{
+		width: 130rpx;
 	}
 	.midd-item1-c1 text{
 		border: #FF7744 1px solid;
 		border-radius: 5px;
 		color: #FF7744;
+		font-size: 24rpx;
+		
 	}
 	.midd-item2{
 		width: 94%;
-		height: 18%;
+		height: 66rpx;
 		margin-left: 3%;
 		display: flex;
 		
 	}
 	.midd-item2 view{
-		height: 20px;
+		height: 47rpx;
 		width: auto;
 		margin-right: 5px;
 		border-radius: 3px;
 		border: #FFCCCC 1px solid;
 		background-color: #FDF5E6;
 	}
-	.midd-item2 view{
+	.midd-item2 view text{
+		font-size: 26rpx;
 		color: #FF4500;
 	}
 	.midd-item3{
 		width: 94%;
 		margin: 0 auto;
-		height: 75%;
+		height: 272rpx;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -603,12 +644,16 @@
 		height: 100%;
 		
 	}
+	.midd-item3-a1 text{
+		font-size: 26rpx;
+		font-weight: 700;
+	}
 	.midd-item3-a1 view{
 		display: flex;
 	}
 	.midd-item3-a1 image{
 		width: 100%;
-		height: 64%;
+		height: 57%;
 		border-radius: 16rpx;
 	}
 	.midd-item3-a1 view image{
@@ -620,8 +665,8 @@
 		margin-bottom: 5px;
 	}
 	.midd-item1-a1{
-		width: 16%;
-		height: 100%;
+		width: 27%;
+		height: 129rpx;
 	}
 	.midd-item1-a1 image{
 		width: 100%;
@@ -629,7 +674,7 @@
 		border-radius: 20rpx;
 	}
 	.midd-item1-a2{
-		width: 65%;
+		width: 68%;
 		height: 100%;
 		padding-left: 10px;
 	}
@@ -656,56 +701,99 @@
 		margin: 0 2px 0 10px;
 	}
 	.midd-item1-c3 text{
-		margin:0 12px;
+		margin:0 24rpx;
+		font-size: 24rpx;
 	}
-	
-	
-	
-	
-	 .special-list{
-	    width: 100%;
-	    height: 307rpx;
-	    overflow: hidden;
-	    padding: 20rpx 0 0 38rpx;
-	    background: #fff;
-	    white-space: nowrap;
-		}
-	    .special-scroll{
-	      height: 330rpx;width: auto;overflow:hidden;
-	    }
-	    .special-item{
-	      height:184rpx;
-	      width: 184rpx;
-	      display: inline-block;
-	      margin-right:40rpx;
-	      background-color: #aaa;
-	    }
-		.image{
-		  height:184rpx;
-		  width: 184rpx;
-		}
-	    .name{
-	      font-size: 20rpx;
-	      color: $normalGrayFont;
-	      -webkit-line-clamp:1;
-	      overflow: hidden;
-	      display:-weblit-box;
-	      word-break: break-all;
-	      text-overflow: ellipsis;
-	    }
-	    .price{
-	      font-size:28rpx;
-	    }
-	    .special-item-last{
-	      height:184rpx;
-	      width: 184rpx;
-	      border:2rpx solid #ddd;
-	      border-radius:2rpx;
-	      display: inline-block;
-	      margin-right:40rpx;
-	      text-align: center;
-	      vertical-align: top;
-	      padding:44rpx 0;
-	    }
+	.midd-item1-c4 text{
+		font-size: 24rpx;
+	}
+	.moreFour{
+		width: 90%;
+		background-color: #FFFFFF;
+		margin: 10px auto;
+		border-radius: 12px;
+	}
+	.more1{
+		width: 94%;
+		height: 82rpx;
+		display: flex;
+		margin: 0 auto;
+	}
+	.more1-item1{
+		display: block;
+		font-size: 43rpx;
+		color: #DD524D;
+		line-height: 104rpx;
+		width: 164rpx;
+	}
+	.more1-item2{
+		display: block;
+		color: #999999;
+		line-height: 104rpx;
+		font-size: 28rpx;
+		width: 165rpx;
+	}
+	.more1-item3{
+		display: flex;
+		margin-left: 229rpx;
+		
+	}
+	.more1-item3 text{
+		display: block;
+		line-height: 104rpx;
+		font-size: 19rpx;
+		color: #999999;
+		width: 38rpx;
+	}
+	.more1-item3 image{
+		width: 19px;
+		height: 22px;
+		margin-top: 30rpx;
+	}
+	.more2{
+		margin-left:1%;
+		height: 260rpx;
+	}
+	.more2-item1{
+		display: -webkit-box;
+	}
+	.more2-item1-a{
+		width: 35%;
+	    /* margin-right: 20rpx; */
+	}
+	.more2-item1-a image{
+		width: 100%;
+		height:75px ;
+		border-radius: 12px;
+	}
+	.more2-item1-a1{
+		font-weight: 750;
+		margin-left: 14rpx;
+		font-size: 33rpx;
+	}
+	.more2-item1-a2{
+		font-size: 24rpx;
+		color: red;
+		margin-left: 10rpx;
+	}
+	.more2-item1-a3{
+		font-weight: 700;
+		color: red;
+		font-size: 32rpx;
+	}
+	.more2-item1-a4{
+		text-decoration:line-through;
+		color: #999999;
+		font-size: 22rpx;
+	}
+	.fjsj{
+		width: 90%;
+		height: 50rpx;
+		margin: 10rpx auto;
+	}
+	.fjsj text{
+		font-size: 42rpx;
+		font-weight: 700;
+	}
 	  
 </style>
