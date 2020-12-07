@@ -99,11 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components = {
-  uniLink: function() {
-    return __webpack_require__.e(/*! import() | components/uni-link/uni-link */ "components/uni-link/uni-link").then(__webpack_require__.bind(null, /*! @/components/uni-link/uni-link.vue */ 27))
-  }
-}
+var components
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -147,14 +143,66 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      href: 'https://uniapp.dcloud.io/component/README?id=uniui' };
+      flag: false,
+      currentScrt: 0,
+      isScrt: false, //综合排序
+      isAdress: false, //全国
+      isScreen: false, //筛选
+      sortByName: "综合排序",
+      sortAddressName: "销量高",
+      screenByName: "速度快",
+      sortBy: [
+      { name: "综合排序", select: false },
+      { name: "距离最近", select: false },
+      { name: "评分最高", select: false },
+      { name: "起送价最低", select: false },
+      { name: "人均高到低", select: false },
+      { name: "人均低到高", select: false }],
+
+      sortAddress: [
+      { name: "郑州", select: false },
+      { name: "北京", select: false },
+      { name: "上海", select: false },
+      { name: "深圳", select: false },
+      { name: "广州", select: false }],
+
+      screenBy: [
+      { title: "商家服务", select: false },
+      { title: "优惠活动", select: false }] };
+
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    is_sortByName: function is_sortByName() {
+      this.flag = !this.flag;
+    },
+    clickz: function clickz(_clickz) {
+      this.sortByName = _clickz;
+    } } };exports.default = _default;
 
 /***/ }),
 /* 17 */

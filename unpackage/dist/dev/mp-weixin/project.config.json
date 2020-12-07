@@ -30,6 +30,11 @@
           "name": "home",
           "id": 0,
           "pathName": "pages/home/home"
+        },
+        {
+          "name": "index",
+          "id": 1,
+          "pathName": "pages/index/index"
         }
       ]
     }

@@ -1,7 +1,17 @@
 
-.container {
-	padding: 20px;
-	font-size: 14px;
-	line-height: 24px;
+.sortHome1{
+	width: 94%;
+	height: 50rpx;
+	border: #000000 1rpx solid;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+.sort1-item view{
+	border-bottom: #C0C0C0 1px solid;
+	width: 94%;
+	height: 50rpx;
 }
 

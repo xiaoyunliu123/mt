@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uniIcons: function() {
-    return Promise.all(/*! import() | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/components/uni-icons/uni-icons.vue */ 34))
+    return Promise.all(/*! import() | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/components/uni-icons/uni-icons.vue */ 27))
   }
 }
 var render = function() {
@@ -428,14 +428,59 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
-    return {};
+    return {
+      flag: false,
+      currentScrt: 0,
+      isScrt: false, //综合排序
+      isAdress: false, //全国
+      isScreen: false, //筛选
+      sortByName: "综合排序",
+      sortAddressName: "销量高",
+      screenByName: "速度快",
+      sortBy: [
+      { name: "综合排序", select: false },
+      { name: "距离最近", select: false },
+      { name: "评分最高", select: false },
+      { name: "起送价最低", select: false },
+      { name: "人均高到低", select: false },
+      { name: "人均低到高", select: false }] };
 
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    is_sortByName: function is_sortByName() {
+      this.flag = !this.flag;
+    },
+    clickz: function clickz(_clickz) {
+      this.sortByName = _clickz;
+    } } };exports.default = _default;
 
 /***/ }),
 
