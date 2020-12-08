@@ -452,18 +452,29 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
+      triangle: "trianglex",
+      isTop: false,
+      isSearch: false,
       flag: false,
       currentScrt: 0,
       isScrt: false, //综合排序
-      isAdress: false, //全国
       isScreen: false, //筛选
       sortByName: "综合排序",
       sortAddressName: "销量高",
       screenByName: "速度快",
+      allowance: "津贴优惠",
+      screen: "筛选",
       sortBy: [
       { name: "综合排序", select: false },
       { name: "距离最近", select: false },
@@ -477,10 +488,30 @@ var _default =
   methods: {
     is_sortByName: function is_sortByName() {
       this.flag = !this.flag;
+      if (this.triangle == "trianglex") {
+        this.triangle = "triangles";
+      } else {
+        this.triangle = "trianglex";
+      }
     },
     clickz: function clickz(_clickz) {
       this.sortByName = _clickz;
-    } } };exports.default = _default;
+    } },
+
+  onPageScroll: function onPageScroll(e) {//nvue暂不支持滚动监听，可用bindingx代替
+    if (e.scrollTop >= 100) {
+      this.isSearch = true;
+    } else {
+      this.isSearch = false;
+    }
+
+
+    if (e.scrollTop >= 970) {
+      this.isTop = true;
+    } else {
+      this.isTop = false;
+    }
+  } };exports.default = _default;
 
 /***/ }),
 

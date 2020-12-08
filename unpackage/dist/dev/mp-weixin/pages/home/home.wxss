@@ -129,13 +129,6 @@ view {
 	display: -webkit-flex;
 	display: flex;
 
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: row;
-	        flex-direction: row;
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	        flex: 1;
 	background-color: #f8f8f8;
 	height: 30px;
 	-webkit-border-radius: 15px;
@@ -145,6 +138,20 @@ view {
 	        flex-wrap: nowrap;
 	margin: 0 7px;
 	line-height: 30px;
+
+	position: -webkit-sticky;
+
+	position: sticky;
+	top: 0px;
+	z-index: 999;
+}
+.input-views{
+
+	position: -webkit-sticky;
+
+	position: sticky;
+	top: 0px;
+	z-index: 999;
 }
 .input-uni-icon {
 	line-height: 30px;
@@ -550,20 +557,61 @@ view {
 	font-size: 42rpx;
 	font-weight: 700;
 }
+.sortHome{
+
+	position: -webkit-sticky;
+
+	position: sticky;
+	top: 50rpx;
+	z-index: 999;
+	margin: 0px;
+	padding: 15px 0 10px 0;
+}
 .sortHome1{
 	width: 94%;
 	height: 50rpx;
-	border: #000000 1rpx solid;
+	margin: 0 auto;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-justify-content: space-around;
 	        justify-content: space-around;
 }
+.sortHomes{
+	background-color: #FFFFFF;
+}
+.sort1-item{
+
+	position: -webkit-sticky;
+
+	position: sticky;
+	top: 0px;
+	z-index: 999;
+	margin: 0px;
+}
 .sort1-item view{
-	border-bottom: #C0C0C0 1px solid;
 	width: 94%;
 	height: 50rpx;
+	background-color: #FFFFFF;
+}
+.sort1 text{
+	color: 	#4F4F4F;
+}
+.triangles{
+	width:0;
+	height:0;
+	border-right:8rpx solid transparent;
+	border-left:8rpx solid transparent;
+	border-bottom:12rpx solid #696969;
+	display: inline-block;
+}
+.trianglex{
+	width:0;
+	height:0;
+	border-right:8rpx solid transparent;
+	border-left:8rpx solid transparent;
+	border-top:12rpx solid #696969;
+	display: inline-block;
 }
   
 

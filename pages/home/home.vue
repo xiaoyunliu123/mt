@@ -1,11 +1,13 @@
 <template>
 	<view>
 		<view class="content" style="width: 100%;background-color: #FF9933;padding-top: 10px;">
-			<view class="" style="background-color: #D8BFD8;width: 100%;height: auto;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+			<view class="" style="background-color: #FFFAFA;width: 100%;height: auto;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 				<view style="height: 20px;"></view>
-				<view class="input-view">
-					<uni-icons class="input-uni-icon" type="search" size="22" color="#666666" />
-					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词" @confirm="confirm">
+				<view :class="[isSearch == true?'input-views':'']">
+					<view class="input-view">
+						<uni-icons class="input-uni-icon" type="search" size="22" color="#666666" />
+						<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词" @confirm="confirm">
+					</view>
 				</view>
 				<view style="margin-top: 10px;padding: 0 15px;display: flex;justify-content: space-evenly;">
 					<view class="shipin">
@@ -286,29 +288,34 @@
 				</view>
 				<view class="fjsj">
 					<text>附近商家</text>
-					<view class="sortHome">
-						<view class="sortHome1">
-							<view class="sort1" v-on:click="is_sortByName()">
-								<text>{{sortByName}}</text>
-							</view>
-							<view class="sort1">
-								<text>{{sortAddressName}}</text>
-							</view>
-							<view class="sort1">
-								<text>{{screenByName}}</text>
-							</view>
+				</view>
+				<view class="sortHome" :class="[isTop == true?'sortHomes':'']">
+					<view class="sortHome1">
+						<view class="sort1" v-on:click="is_sortByName()">
+							<text>{{sortByName}}</text>
+							<div :class="triangle"></div>
 						</view>
-						
-						
-						
-						<!-- 综合排序下拉 -->
-						<view class="sort1-item" v-show="flag"  v-for="(g, index) in sortBy" :key="index">
-							<view class="" v-on:click="clickz(g.name)">
-								<text>{{g.name}}</text>
-							</view>
-							
+						<view class="sort1">
+							<text>{{sortAddressName}}</text>
+						</view>
+						<view class="sort1">
+							<text>{{screenByName}}</text>
+						</view>
+						<view class="sort1">
+							<text>{{allowance}}</text>
+						</view>
+						<view class="sort1">
+							<text>{{screen}}</text>
 						</view>
 					</view>
+					<!-- 综合排序下拉 -->
+					<view class="sort1-item" v-show="flag"  v-for="(g, index) in sortBy" :key="index">
+						<view class="" v-on:click="clickz(g.name)">
+							<text>{{g.name}}</text>
+						</view>
+					</view>
+				</view>
+				<view style="background-color: #4CD964;width: 100%;height: 2000upx;">
 					
 				</view>
 			</view>
@@ -320,14 +327,18 @@
 	export default {
 		data() {
 			return {
+				triangle:"trianglex",
+				isTop:false,
+				isSearch:false,
 				flag:false,
 				currentScrt: 0,
 				isScrt:false,//综合排序
-				isAdress:false,//全国
 				isScreen:false,//筛选
 				sortByName:"综合排序",
 				sortAddressName:"销量高",
 				screenByName:"速度快",
+				allowance:"津贴优惠",
+				screen:"筛选",
 				sortBy:[
 				  { name:  "综合排序", select: false},
 				  { name: "距离最近", select: false },
@@ -341,11 +352,30 @@
 		methods: {
 			is_sortByName(){
 				this.flag=!this.flag
+				if(this.triangle=="trianglex"){
+					this.triangle="triangles"
+				}else{
+					this.triangle="trianglex"
+				}
 			},
 			clickz(clickz){
 				this.sortByName=clickz
 			}
-		}
+		},
+		onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代替
+			if(e.scrollTop>=100){
+				this.isSearch=true
+			}else{
+				this.isSearch=false
+			}
+			
+				
+			if(e.scrollTop>=970){
+				this.isTop=true
+			}else{
+				this.isTop=false
+			}
+		},
 	}
 </script>
 
@@ -467,8 +497,6 @@
 		/* #ifndef APP-PLUS-NVUE */
 		display: flex;
 		/* #endif */
-		flex-direction: row;
-		flex: 1;
 		background-color: #f8f8f8;
 		height: 30px;
 		border-radius: 15px;
@@ -476,6 +504,20 @@
 		flex-wrap: nowrap;
 		margin: 0 7px;
 		line-height: 30px;
+		/* #ifndef APP-PLUS-NVUE */
+		position: -webkit-sticky;
+		/* #endif */
+		position: sticky;
+		top: var(--window-top);
+		z-index: 999;
+	}
+	.input-views{
+		/* #ifndef APP-PLUS-NVUE */
+		position: -webkit-sticky;
+		/* #endif */
+		position: sticky;
+		top: var(--window-top);
+		z-index: 999;
 	}
 
 	.input-uni-icon {
@@ -839,17 +881,58 @@
 		font-size: 42rpx;
 		font-weight: 700;
 	}
+	.sortHome{
+		/* #ifndef APP-PLUS-NVUE */
+		position: -webkit-sticky;
+		/* #endif */
+		position: sticky;
+		top: 50rpx;
+		z-index: 999;
+		margin: 0px;
+		padding: 15px 0 10px 0;
+	}
 	.sortHome1{
 		width: 94%;
 		height: 50rpx;
-		border: #000000 1rpx solid;
+		margin: 0 auto;
 		display: flex;
 		justify-content: space-around;
 	}
+	.sortHomes{
+		background-color: #FFFFFF;
+	}
+	.sort1-item{
+		/* #ifndef APP-PLUS-NVUE */
+		position: -webkit-sticky;
+		/* #endif */
+		position: sticky;
+		top: var(--window-top);
+		z-index: 999;
+		margin: 0px;
+	}
 	.sort1-item view{
-		border-bottom: #C0C0C0 1px solid;
 		width: 94%;
 		height: 50rpx;
+		background-color: #FFFFFF;
+	}
+	.sort1 text{
+		color: 	#4F4F4F;
+	}
+	.triangles{
+		width:0;
+		height:0;
+		border-right:8upx solid transparent;
+		border-left:8upx solid transparent;
+		border-bottom:12upx solid #696969;
+		display: inline-block;
+	}
+	.trianglex{
+		width:0;
+		height:0;
+		border-right:8upx solid transparent;
+		border-left:8upx solid transparent;
+		border-top:12upx solid #696969;
+		display: inline-block;
 	}
 	  
 </style>
