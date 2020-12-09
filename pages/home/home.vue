@@ -4,7 +4,7 @@
 			<view class="" style="background-color: #FFFAFA;width: 100%;height: auto;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 				<view style="height: 20px;"></view>
 				<view :class="[isSearch == true?'input-views':'']">
-					<view class="input-view">
+					<view class="input-view" :class="[isSearch == true?'input-viewa':'']">
 						<uni-icons class="input-uni-icon" type="search" size="22" color="#666666" />
 						<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词" @confirm="confirm">
 					</view>
@@ -315,8 +315,52 @@
 						</view>
 					</view>
 				</view>
-				<view style="background-color: #4CD964;width: 100%;height: 2000upx;">
-					
+				<view class="commodity">
+					<view class="comm-item">
+						<view class="comm-itema">
+							<image src="../../static/images/fjsj.png" mode="aspectFill"></image>
+						</view>
+						<view class="comm-itemb">
+							<view class="" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+								<text style="font-size: 36upx;font-weight: 700;">吉祥馄饨.烧麦(小白楼富力中心...)</text>
+							</view>
+							<view class="" style="display: flex;justify-content: space-between;">
+								<view class="" style="width: 40%;">
+									<view class="">
+										<image src="../../static/images/xing.png" mode="aspectFill" style="height: 20upx;width: 20upx;"></image>
+										<text style="margin-left: 10upx;font-size: 18upx;">4.5</text>
+									</view>
+									<view class="" style="margin-left: 76upx;">
+										<text style="font-size: 18upx;">月售528</text>
+									</view>
+								</view>
+								<view class="" style="width: 45%;">
+									<text style="font-size: 22upx;">30分钟</text>
+									<text style="margin-left: 8px;font-size: 22upx;">1.2km</text>
+								</view>
+							</view>
+							<view class="">
+								<text style="font-size: 22upx;">起送</text>
+								<text style="margin-left: 10upx;font-size: 22upx;">￥20</text>
+								<text style="margin-left: 20upx;font-size: 22upx;">免配送费</text>
+								<text style="font-size: 22upx;">人均</text>
+								<text style="font-size: 22upx;">￥19</text>
+							</view>
+							<view class="">
+								<text style="white-space:nowrap;background-color: #DD524D;border-radius: 12upx;font-size: 22upx;">"一如既往的好，超喜欢这种大个的馄饨"</text>
+							</view>
+							<view class="">
+								<view class="" style="white-space:nowrap;border-radius: 12upx;border:1px #2C405A solid;height: 100%;">
+									<text style="font-size: 18upx;">25减10|</text>
+									<text style="font-size: 18upx;">31减13|</text>
+									<text style="font-size: 18upx;">41减17|</text>
+									<text style="font-size: 18upx;">67减24</text>
+									<text style="background-color: #007AFF;font-size: 18upx;">含6元津贴</text>
+								</view>
+								
+							</view>
+						</view>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -518,6 +562,10 @@
 		position: sticky;
 		top: var(--window-top);
 		z-index: 999;
+		background-color: #FFFFFF;
+	}
+	.input-viewa{
+		width: 60%;
 	}
 
 	.input-uni-icon {
@@ -886,7 +934,7 @@
 		position: -webkit-sticky;
 		/* #endif */
 		position: sticky;
-		top: 50rpx;
+		top: 61rpx;
 		z-index: 999;
 		margin: 0px;
 		padding: 15px 0 10px 0;
@@ -934,5 +982,39 @@
 		border-top:12upx solid #696969;
 		display: inline-block;
 	}
-	  
+	.commodity{
+		background-color: #FFFFFF;
+		width: 94%;
+		height: 250upx;
+		margin: 0 auto;
+		border-radius: 12upx;
+		/* margin-bottom: 10upx; */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}  
+	.comm-item{
+		border: #000000 1px solid;
+		width: 91%;
+		height: 90%;
+		display: flex;
+		justify-content: space-between;
+	}
+	.comm-itema{
+		width: 168upx;
+		height: 112upx;
+		border-radius: 12upx;
+	}
+	.comm-itema image{
+		width: 100%;
+		height: 100%;
+	}
+	.comm-itemb{
+		width: 460upx;
+		height: 100%;
+	}
+	.comm-itemb view{
+		width: 100%;
+		height: 19%;
+	}
 </style>
