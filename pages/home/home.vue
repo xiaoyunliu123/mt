@@ -275,12 +275,11 @@
 								</view>
 								
 								
-								<view class="" style="width: 29px;height: 80%;background-color: #C0C0C0;border-radius: 10px;">
-									<image src="../../static/images/xing.png" mode="aspectFill" style="width: 10px;height: 10px;margin-left: 10px;"></image>
-									<view class="" style="width: 25px;height: 80%;text-align: center;">
+								<view class="more2-item2">
+									<image src="../../static/images/xing.png" mode="aspectFill"></image>
+									<view>
 										<text>更多惊喜</text>
 									</view>
-									
 								</view>
 							</view>
 						</scroll-view>
@@ -315,62 +314,69 @@
 						</view>
 					</view>
 				</view>
-				<view class="commodity">
-					<view class="comm-item">
-						<view class="comm-itema">
-							<image src="../../static/images/fjsj.png" mode="aspectFill"></image>
-						</view>
-						<view class="comm-itemb">
-							<view class="" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-								<text style="font-size: 36upx;font-weight: 700;">吉祥馄饨.烧麦(小白楼富力中心...)</text>
+				<block v-for="(g, index) in goods.data" :key="index">
+					<view class="commodity">
+						<view class="comm-item">
+							<view class="comm-itema">
+								<image :src="g.images" mode="aspectFill"></image>
 							</view>
-							<view class="" style="display: flex;justify-content: space-between;">
-								<view class="" style="width: 40%;">
-									<view class="">
-										<image src="../../static/images/xing.png" mode="aspectFill" style="height: 20upx;width: 20upx;"></image>
-										<text style="margin-left: 10upx;font-size: 18upx;">4.5</text>
+							<view class="comm-itemb">
+								<view class="comm-itemb-a">
+									<text>{{g.name}}</text>
+								</view>
+								<view class="comm-itemb-b">
+									<view class="comm-itemb-b1">
+										<view class="comm-itemb-b1-a">
+											<image src="../../static/images/xing.png" mode="aspectFill"></image>
+											<text>{{g.score}}</text>
+										</view>
+										<view class="comm-itemb-b1-b">
+											<text>月售{{g.ys}}</text>
+										</view>
 									</view>
-									<view class="" style="margin-left: 76upx;">
-										<text style="font-size: 18upx;">月售528</text>
+									<view class="comm-itemb-b2">
+										<text class="comm-itemb-b2-a">{{g.time}}分钟</text>
+										<text class="comm-itemb-b2-b">{{g.km}}km</text>
 									</view>
 								</view>
-								<view class="" style="width: 45%;">
-									<text style="font-size: 22upx;">30分钟</text>
-									<text style="margin-left: 8px;font-size: 22upx;">1.2km</text>
+								<view class="comm-itemb-c">
+									<text class="comm-itemb-c-a1">起送</text>
+									<text class="comm-itemb-c-a2">￥{{g.qs}}</text>
+									<text class="comm-itemb-c-a3">{{g.tj}}</text>
+									<text class="comm-itemb-c-a4">人均</text>
+									<text class="comm-itemb-c-a5">￥{{g.rj}}</text>
 								</view>
-							</view>
-							<view class="">
-								<text style="font-size: 22upx;">起送</text>
-								<text style="margin-left: 10upx;font-size: 22upx;">￥20</text>
-								<text style="margin-left: 20upx;font-size: 22upx;">免配送费</text>
-								<text style="font-size: 22upx;">人均</text>
-								<text style="font-size: 22upx;">￥19</text>
-							</view>
-							<view class="">
-								<text style="white-space:nowrap;background-color: #DD524D;border-radius: 12upx;font-size: 22upx;">"一如既往的好，超喜欢这种大个的馄饨"</text>
-							</view>
-							<view class="">
-								<view class="" style="white-space:nowrap;border-radius: 12upx;border:1px #2C405A solid;height: 100%;">
-									<text style="font-size: 18upx;">25减10|</text>
-									<text style="font-size: 18upx;">31减13|</text>
-									<text style="font-size: 18upx;">41减17|</text>
-									<text style="font-size: 18upx;">67减24</text>
-									<text style="background-color: #007AFF;font-size: 18upx;">含6元津贴</text>
-								</view>
-								
+								<text class="comm-itemb-d">
+									<text><text>"</text>{{g.pj}}<text>"</text></text>
+								</text>
+								<view class="comm-itemb-e">
+									<text class="comm-itemb-e-a">
+										<block v-for="(item,index) in g.yh">	
+											<text>{{item.youhui}}|</text>
+										</block>
+									</text>
+								</view>	
+								<text class="comm-itemb-f">{{g.jt}}</text>	
 							</view>
 						</view>
-					</view>
-				</view>
+					</view>	
+				</block>	
+				
+				<view class="uni-loadmore" v-if="showLoadMore">{{loadMoreText}}</view>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import uniLoadMore from '../../components/uni-load-more/uni-load-more.vue';
+	import goods from '../../components/json.js';
+	
 	export default {
 		data() {
 			return {
+				loadMoreText: "加载中...",
+				showLoadMore: false,
 				triangle:"trianglex",
 				isTop:false,
 				isSearch:false,
@@ -390,7 +396,15 @@
 				  { name: "起送价最低", select: false },
 				  { name: "人均高到低", select: false },
 				  { name: "人均低到高", select: false }
-				]
+				],
+				goods:goods,
+				status : 'loading',
+				contentText: {
+								contentdown: '上拉加载更多',
+								contentrefresh: '加载中',
+								contentnomore: '没有更多'
+							}
+				
 			}
 		},
 		methods: {
@@ -419,6 +433,9 @@
 			}else{
 				this.isTop=false
 			}
+		},
+		onLoad() {
+		
 		},
 	}
 </script>
@@ -990,11 +1007,11 @@
 		border-radius: 12upx;
 		/* margin-bottom: 10upx; */
 		display: flex;
+		/* flex-direction: column; */
 		justify-content: center;
 		align-items: center;
 	}  
 	.comm-item{
-		border: #000000 1px solid;
 		width: 91%;
 		height: 90%;
 		display: flex;
@@ -1014,7 +1031,110 @@
 		height: 100%;
 	}
 	.comm-itemb view{
-		width: 100%;
 		height: 19%;
 	}
+	.comm-itemb-a{
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+	}
+	.comm-itemb-a text{
+		font-size: 36upx;
+		font-weight: 700;
+	}
+	.comm-itemb-b{
+		display: flex;
+		justify-content: space-between;
+	}
+	.comm-itemb-b1{
+		width: 40%;
+	}
+	.comm-itemb-b1-a image{
+		height: 20upx;
+		width: 20upx;
+	}
+	.comm-itemb-b1-a text{
+		margin-left: 10upx;
+		font-size: 18upx;
+	}
+	.comm-itemb-b1-b{
+		margin-left: 76upx;
+	}
+	.comm-itemb-b1-b text{
+		font-size: 18upx;
+	}
+	.comm-itemb-b2{
+		width: 45%;
+	}
+	.comm-itemb-b2-a{
+		font-size: 22upx;
+	}
+	.comm-itemb-b2-b{
+		margin-left: 8px;
+		font-size: 22upx;
+	}
+	.comm-itemb-c-a1{
+		font-size: 22upx;
+	}
+	.comm-itemb-c-a2{
+		margin-left: 10upx;
+		font-size: 22upx;
+	}
+	.comm-itemb-c-a3{
+		margin-left: 20upx;
+		font-size: 22upx;
+	}
+	.comm-itemb-c-a4{
+		font-size: 22upx;
+	}
+	.comm-itemb-c-a5{
+		font-size: 22upx;
+	}
+	.comm-itemb-d{
+		background-color: #FFB5B5;
+		border-radius: 10upx;
+		margin-bottom: 10upx;
+	}
+	.comm-itemb-d text{
+		white-space:nowrap;
+		border-radius: 12upx;
+		font-size: 22upx;
+		padding: 7upx;
+	}
+	.comm-itemb-e{
+		margin-top: 10upx;
+		display: inline-block;
+	}
+	.comm-itemb-e-a{
+		white-space:nowrap;
+		border-top-left-radius: 12upx;
+		border-bottom-left-radius: 12upx;
+		border:1px #FFC1E0 solid;
+		padding: 0 5px;
+	}
+	.comm-itemb-e-a text{
+		font-size: 20upx;
+	}
+	.comm-itemb-f{
+		background-color: #FFB5B5;
+		border-top-right-radius: 12upx;
+		border-bottom-right-radius: 12upx;
+	}
+	.more2-item2{
+		width: 29px;
+		height: 80%;
+		background-color: #C0C0C0;
+		border-radius: 10px;
+	}
+	.more2-item2 image{
+		width: 10px;
+		height: 10px;
+		margin-left: 10px;
+	}
+	.more1-item2 view{
+		width: 25px;
+		height: 80%;
+		text-align: center;
+	}
+	
 </style>
